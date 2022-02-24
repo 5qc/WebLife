@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.svg" />
+
+        <title>WebLife</title>
+
+        <link rel="canonical" href="https://weblife.glitch.me/" />
+        <meta name="description" content="BitLife, but on the web" />
+        <meta name="robots" content="index,follow" />
+        <meta property="og:title" content="WebLife" />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content="https://weblife.glitch.me/" />
+        <meta property="og:description" content="BitLife, but on the web" />
+        <meta property="og:image" content="" />
+        <meta name="twitter:card" content="summary" />
+
+        <link rel="stylesheet" href="style.css" />
+        <script src="script.js"></script>
+    </head>
+
+    <body>
+        <div class="header">
+            WebLife
+        </div>
+        <div class="header2">
+            <div id="flag"></div>
+            <div class="data">
+                <div id="name">?</div>
+                <div id="career"></div>
+            </div>
+
+            <div class="money">
+                <div id="money-count">0</div>
+                Bank Balance
+            </div>
+        </div>
+
+        <div class="main">
+            <div id="age0" class="year">
+                <div class="age-header">Age: 0 years</div>
+                <div id="stats-age0" class="stats"></div>
+            </div>
+        </div>
+
+        <div class="settings">
+            <button id="age-button">
+                Age
+            </button>
+        </div>
+
+        <div id="school-stop-screen" class="stop-screen" style="display: none;"></div>
+        <div id="friend-stop-screen" class="stop-screen" style="display: none;"></div>
+        <div id="university-stop-screen" class="stop-screen" style="display: none;"></div>
+        <div id="university-rejected-stop-screen" class="stop-screen" style="display: none;"></div>
+        <div id="university-student-loan-stop-screen" class="stop-screen" style="display: none;"></div>
+        <div id="success-stop-screen" class="stop-screen" style="display: none;"></div>
+
+        <div id="school-popup" class="popup" style="display: none;">
+            <div id="school-popup-top" class="popup-top">
+                <div id="school-popup-title" class="popup-title">Placeholder</div>
+                <div id="school-popup-subtitle" class="popup-subtitle"></div>
+            </div>
+            <div id="school-popup-content" class="popup-content">
+                <div id="school-popup-header" class="popup-header">Placeholder</div>
+                <div id="school-popup-text" class="popup-text">
+                    Placeholder
+                </div>
+                <div id="school-popup-buttons" class="popup-buttons">
+                    <button id="school-popup-okay" class="popup-okay">OK</button>
+                </div>
+            </div>
+        </div>
+        <div id="friend-popup" class="popup" style="display: none;">
+            <div id="friend-popup-top" class="popup-top">
+                <div id="friend-popup-title" class="popup-title">Placeholder</div>
+                <div id="friend-popup-subtitle" class="popup-subtitle"></div>
+            </div>
+            <div id="friend-popup-content" class="popup-content">
+                <div id="friend-popup-header" class="popup-header">Placeholder</div>
+                <div id="friend-popup-text" class="popup-text">
+                    Placeholder
+                </div>
+                <div id="friend-popup-buttons" class="popup-buttons">
+                    <button id="friend-popup-okay" class="popup-okay">OK</button>
+                </div>
+            </div>
+        </div>
+        <div id="university-popup" class="popup" style="display: none;">
+            <div id="university-popup-top" class="popup-top">
+                <div id="university-popup-title" class="popup-title">Placeholder</div>
+                <div id="university-popup-subtitle" class="popup-subtitle"></div>
+            </div>
+            <div id="university-popup-content" class="popup-content">
+                <div id="university-popup-header" class="popup-header">Placeholder</div>
+                <div id="university-popup-text" class="popup-text">
+                    Placeholder
+                </div>
+                <div id="university-popup-buttons" class="popup-buttons">
+                    <button id="university-popup-okay" class="popup-okay">OK</button>
+                </div>
+            </div>
+        </div>
+        <div id="university-popup-accepted" class="popup" style="display: none;">
+            <div id="university-popup-accepted-top" class="popup-top">
+                <div id="university-popup-accepted-title" class="popup-title">Placeholder</div>
+                <div id="university-popup-accepted-subtitle" class="popup-subtitle"></div>
+            </div>
+            <div id="university-popup-accepted-content" class="popup-content">
+                <div id="university-popup-accepted-header" class="popup-header">Placeholder</div>
+                <div id="university-popup-accepted-text" class="popup-text">
+                    Placeholder
+                </div>
+                <div id="university-popup-accepted-buttons" class="popup-buttons">
+                    <button id="university-popup-accepted-okay" class="popup-okay">OK</button>
+                </div>
+            </div>
+        </div>
+        <div id="university-popup-rejected" class="popup2" style="display: none;">
+            <div id="university-popup-rejected-top" class="popup2-top">
+                <div id="university-popup-rejected-title" class="popup2-title">Rejected</div>
+            </div>
+            <div id="university-popup-rejected-text" class="popup2-text">
+                Your application to university was rejected.
+            </div>
+            <div id="university-popup-rejected-buttons" class="popup2-buttons">
+                <button id="university-popup-rejected-button1" class="popup-okay">OK</button>
+            </div>
+        </div>
+        <div id="university-student-loan" class="popup2" style="display: none;">
+            <div id="university-student-loan-top" class="popup2-top">
+                <div id="university-student-loan-title" class="popup2-title">Approved</div>
+            </div>
+            <div id="university-student-loan-text" class="popup2-text">
+                Your took out a student loan to pay for your university tuition.
+            </div>
+            <div id="university-student-loan-buttons" class="popup2-buttons">
+                <button id="university-student-loan-button1" class="popup-okay">OK</button>
+            </div>
+        </div>
+        <div id="success-popup" class="popup2" style="display: none;">
+            <div id="success-popup-top" class="popup2-top">
+                <div id="success-popup-title" class="popup2-title">Placeholder</div>
+            </div>
+            <div id="success-popup-text" class="popup2-text">
+                Placeholder
+            </div>
+            <div id="success-popup-buttons" class="popup2-buttons">
+                <button id="success-popup-button1" class="popup-okay">OK</button>
+            </div>
+        </div>
+        <div id="uni-grad-popup" class="popup" style="display: none;">
+            <div id="uni-grad-popup-top" class="popup-top">
+                <div id="uni-grad-popup-title" class="popup-title">Placeholder</div>
+                <div id="uni-grad-popup-subtitle" class="popup-subtitle"></div>
+            </div>
+            <div id="uni-grad-popup-content" class="popup-content">
+                <div id="uni-grad-popup-header" class="popup-header">Placeholder</div>
+                <div id="uni-grad-popup-text" class="popup-text">
+                    Placeholder
+                </div>
+                <div id="uni-grad-popup-buttons" class="popup-buttons">
+                    <button id="uni-grad-popup-okay" class="popup-okay">OK</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="grave-screen" style="display: none;"></div>
+        <div id="grave" style="display: none;">
+            <div id="grave-top">
+                <div id="grave-name">yes me</div>
+                <div id="grave-age">aged 50 years</div>
+            </div>
+            <table id="grave-stats">
+                <tr>
+                    <th scope="row">Net Worth:</th>
+                    <td id="grave-net-worth">$29,609</td>
+                </tr>
+                <tr>
+                    <th scope="row">Residence:</th>
+                    <td id="grave-residence">$29,609</td>
+                </tr>
+                <tr>
+                    <th scope="row">Career:</th>
+                    <td id="grave-career">$29,609</td>
+                </tr>
+                <tr>
+                    <th scope="row">Education:</th>
+                    <td id="grave-education">$29,609</td>
+                </tr>
+                <tr>
+                    <th scope="row">Years in Prison:</th>
+                    <td id="grave-years-in-prison">$29,609</td>
+                </tr>
+            </table>
+
+            <div id="grave-text"></div>
+        </div>
+
+        <!-- Screen Stuff -->
+        <div id="relationships-screen" class="screen">
+            <div id="relationships-screen-close" class="screen-close">X</div>
+            <div id="relationships-screen-header" class="screen-header">
+                RELATIONSHIPS
+            </div>
+            <div id="relationships-screen-subheader-parents" class="screen-subheader">Parents</div>
+            <div id="relationships-screen-section-parents" class="screen-section">
+                <ul>
+                    <li>
+                        <div class="relationship-name">my dad</div> <div class="relationship-label">Father</div>
+                    </li>
+                    <li>
+                        <div class="relationship-name">my mother</div> <div class="relationship-label">Mother</div>
+                    </li>
+                </ul>
+            </div>
+
+            <div id="relationships-screen-subheader-friends" class="screen-subheader">Friends</div>
+            <div id="relationships-screen-section-friends" class="screen-section">
+            </div>
+        </div>
+    </body>
+</html>
